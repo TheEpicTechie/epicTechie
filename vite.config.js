@@ -7,6 +7,8 @@ const cssFileName = 'index.min.css'
 
 const __dirname = path.resolve();
 
+const resolvePath = srcPath => path.resolve(__dirname, srcPath);
+
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -14,9 +16,10 @@ export default defineConfig({
 
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./src"),
-      // This above line is used to import files or modules relative to the src directory in project
-      // Eg: src/components/example.js -> import Example from "@/components/example.js";
+      '@': resolvePath('./src'),
+      '@components': resolvePath('./src/components'),
+      '@shared': resolvePath('./src/components/shared'),
+      '@pages': resolvePath('./src/root/pages'),
     },
   },
 

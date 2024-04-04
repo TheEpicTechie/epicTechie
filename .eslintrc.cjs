@@ -18,4 +18,22 @@ module.exports = {
       { allowConstantExport: true },
     ],
   },
+
+  settings: {
+    'import/resolver': {
+      alias: {
+        map: [
+          ['@', './src'],
+          ['@components', './src/components'],
+        ],
+        extensions: [
+          '.js',
+          '.jsx',
+          '.json',
+        ],
+      },
+    },
+  },
 }
+
+
